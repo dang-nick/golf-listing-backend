@@ -6,11 +6,11 @@ from dotenv import load_dotenv
 # Load values from .env into environment variables
 load_dotenv()
 
-client_id = os.getenv("CLIENT_ID_SBX")
-client_secret = os.getenv("CLIENT_SECRET")
-oauth_url = os.getenv("O_AUTH_URL_SBX")
-api_base = os.getenv("API_BASE_URL_SBX")
-scope = os.getenv("OAUTH_SCOPE")
+client_id = os.getenv("client_id_prd")
+client_secret = os.getenv("client_secret_prd")
+oauth_url = os.getenv("oauth_url_prod")
+api_base = os.getenv("api_base_url_prod")
+scope = os.getenv("oauth_scope")
 
 # ---- Get OAuth token ----
 credentials = f"{client_id}:{client_secret}"
@@ -40,8 +40,8 @@ headers = {
 }
 
 params = {
-    "q": "drone",
-    "limit": 3
+    "q": "taylormade-sim-2",
+    "limit": 1
 }
 
 response = requests.get(search_url, headers=headers, params=params)
